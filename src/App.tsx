@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { ITask } from './Interfaces'
 import TodoTask from './Components/TodoTask'
+import Header from './Components/Header/Header'
 
 const App:FC = () => {
   // state
@@ -31,7 +32,8 @@ const App:FC = () => {
   }
   return (
     <div className='app'>
-    <div className='header'>
+    {/* <div className='header'></div> */}
+      <Header />
       <label htmlFor='task'>Task</label>
       <input 
         required
@@ -51,7 +53,6 @@ const App:FC = () => {
       />
     <button className='newTaskBtn' type='button' onClick={addTask}>New Todo</button>
     
-    </div>
       <div>{todoList.map((task:ITask, key:number)=>{
                 return <TodoTask key={key} task={task}/>
             })}
